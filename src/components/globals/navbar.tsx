@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "../../../public/logo.png";
 
 const Navbar = () => {
   const routes = [
@@ -29,7 +31,18 @@ const Navbar = () => {
   ];
   return (
     <header className="fixed top-0 right-0 left-0 w-full backdrop-blur-lg z-50 p-4 bg-black/40 flex items-center justify-between gap-2 border border-neutral-900">
-      <aside></aside>
+      <aside>
+        <Link href={"/"} className="flex items-center gap-1">
+          <Image
+            src={Logo}
+            alt="logo"
+            width={30}
+            height={30}
+            className="rounded-full"
+          />
+          <h1 className="font-semibold text-xl">FuzzieFlow</h1>
+        </Link>
+      </aside>
       <nav>
         <ul className="flex flex-wrap justify-center gap-4 list-none">
           {routes.map((route) => (
